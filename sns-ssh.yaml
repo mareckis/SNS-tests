@@ -3,9 +3,9 @@
   connection: local
   vars:
     appliance:
-      host: 10.0.0.137
+      host: 10.0.0.147
       user: admin
-      password: adminadmin
+      password: telewiz6
       sslverifyhost: False
 
   tasks:
