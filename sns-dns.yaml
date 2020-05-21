@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    appliance:
+      host: 10.60.3.235
+      user: admin
+      password: adminadmin
+      sslverifyhost: False
+    dns:
+      server1: 8.8.8.8
+      server2: 8.8.4.4
+      
+  tasks:
+    - name: Configure DNS servers
+      sns_command:
+        appliance: "{{ appliance }}"
+        script: |
+          CONFIG OBJECT HOST NEW name=dns1 ip="{{ dns.server1 }}" update=1
+          CONFIG OBJECT HOST NEW name=dns2 ip="{{ dns.server2 }}" update=1
+          CONFIG OBJECT ACTIVATE
+          CONFIG DNS SERVER ADD dns1
+          CONFIG DNS SERVER ADD dns2
+          CONFIG DNS ACTIVATE
