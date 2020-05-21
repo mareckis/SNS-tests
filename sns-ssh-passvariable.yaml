@@ -3,7 +3,7 @@
   connection: local
   vars:
     appliance:
-      host: {{ IP_FIREWALL }}
+      host: "{{ IP_FIREWALL }}"
       user: admin
       password: telewiz6
       sslverifyhost: False
