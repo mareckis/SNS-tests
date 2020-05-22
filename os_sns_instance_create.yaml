@@ -1,0 +1,18 @@
+---
+- name: Test AWX -> OpenStack Instance Create
+  hosts: localhost
+    
+  tasks:
+  - name: New SNS instance, attach to network
+    os_server:
+       state: present
+       name: EVA_VM_AWX
+       image: EVA_VPAYG_OpenStack
+       key_name: vm
+       timeout: 200
+       flavor: m2.small
+       auto_ip: yes
+       nics:
+        - net-name: private
+        - net-name: public
+       security_groups: default
