@@ -14,5 +14,15 @@
        auto_ip: yes
        nics:
         - net-name: private
-        - net-name: public
        security_groups: default
+  - name: Floating IP for the SNS firewall
+    os_floating_ip:
+        state: present
+        server: EVA_VM_AWX
+        network: public
+        nat_destination: private
+        reuse: yes
+        wait: yes
+        timeout: 40
+        
+        
