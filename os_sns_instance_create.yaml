@@ -27,7 +27,7 @@
     register: output
   - name: Debug floating IP output (to the variable)
     set_fact: 
-        output: "{{ result.stdout | from_json }}"
+        output: "{{ output.result.stdout }}"
   - name: debug fact
     debug:
         msg: "{{ output.floating_ip.floating_ip_address }}"
