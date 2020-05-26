@@ -30,5 +30,5 @@
         json_output: "{{ result.stdout | from_json }}"
   - name: debug fact
     debug:
-        msg: "{{ json_output.floating_ip[0].floating_ip_address }}"
+        msg: "{{ json_output.floating_ip.floating_ip_address }}"
         
