@@ -22,7 +22,7 @@
         network: public
         nat_destination: private
         reuse: yes
-        wait: yes
+        wait: true
         timeout: 40
         
         
