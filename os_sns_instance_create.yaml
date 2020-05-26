@@ -24,5 +24,6 @@
         reuse: yes
         wait: true
         timeout: 40
+        register: json_output
         
         
