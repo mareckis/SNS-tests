@@ -24,7 +24,7 @@
         reuse: yes
         wait: true
         timeout: 40
-        register: json_output
+    register: json_output
   - name: Debug floating IP output (to the variable)
     set_fact: 
         json_output: "{{ result.stdout | from_json }}"
