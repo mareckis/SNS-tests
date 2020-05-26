@@ -25,5 +25,10 @@
         wait: true
         timeout: 40
         register: json_output
-        
+  - name: Debug floating IP output (to the variable)
+        set_fact: 
+          json_output: "{{ result.stdout | from_json }}"
+  - name: debug fact
+        debug:
+          msg: "{{ json_output.floating_ip[0].floating_ip_address }}"
         
