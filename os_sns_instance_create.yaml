@@ -28,7 +28,11 @@
   - name: Debug floating IP output (to the variable)
     set_fact: 
         output: "{{ output.floating_ip.floating_ip_address }}"
-  - name: debug fact
+  - name: SNS EVA Floating IP:
     debug:
         msg: "{{ output }}"
+  - name: Passing the EVA FW IP to the workflow
+    set_stats:
+       data:
+        IP_FIREWALL: output
         
