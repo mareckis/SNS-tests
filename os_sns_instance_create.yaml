@@ -34,5 +34,5 @@
   - name: Passing the EVA FW IP to the workflow
     set_stats:
        data:
-        IP_FIREWALL: output
+        IP_FIREWALL: "{{ output }}"
         
