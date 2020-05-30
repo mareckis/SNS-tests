@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    appliance:
+      host: "{{ IP_FIREWALL }}"
+      user: admin
+      password: telewiz6
+      sslverifyhost: False
+    ntp:
+      host: fr.pool.ntp.org
+      ip: 178.33.214.167
+
+  tasks:
+    - name: Setting up NTP service
+      sns_command:
+        appliance: "{{ appliance }}"
+        script: |
+          CONFIG OBJECT HOST NEW name="{{ ntp.host }}"" ip="{{ ntp.ip }}" resolve=dynamic update=1
+          CONFIG OBJECT ACTIVATE
+          CONFIG NTP SERVER ADD name={{ ntp.host }}
+          CONFIG NTP ACTIVATE
