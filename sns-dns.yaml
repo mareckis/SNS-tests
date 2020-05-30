@@ -3,7 +3,7 @@
   connection: local
   vars:
     appliance:
-      host: 10.60.3.235
+      host: 10.0.0.142
       user: admin
       password: adminadmin
       sslverifyhost: False
