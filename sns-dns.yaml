@@ -5,7 +5,7 @@
     appliance:
       host: 10.0.0.142
       user: admin
-      password: adminadmin
+      password: telewiz6
       sslverifyhost: False
     dns:
       server1: 8.8.8.8
