@@ -3,7 +3,7 @@
   connection: local
   vars:
     appliance:
-      host: 10.0.0.147
+      host: 10.0.0.142
       user: admin
       password: telewiz6
       sslverifyhost: False
