@@ -16,7 +16,9 @@
       sns_command:
         appliance: "{{ appliance }}"
         script: |
-          CONFIG OBJECT HOST NEW name="{{ ntp.host }}"" ip="{{ ntp.ip }}" resolve=dynamic update=1
+          CONFIG OBJECT HOST NEW name="{{ ntp.host }}"" ip="{{ ntp.ip }}" resolve=static update=1
           CONFIG OBJECT ACTIVATE
+          CONFIG NTP STATE on
+          CONFIG NTP ADVANCED allowUnauth=on
           CONFIG NTP SERVER ADD name={{ ntp.host }}
           CONFIG NTP ACTIVATE
