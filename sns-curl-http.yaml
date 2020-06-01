@@ -1,18 +1,8 @@
 ---
-- hosts: localhost
-  connection: local
+- hosts: "{{ IP_FIREWALL }}"
+  remote_user: admin
   vars:
-    appliance:
-      host: 10.0.0.142
-      user: admin
-      password: telewiz6
-      sslverifyhost: False
-    endpoint:
-      ip: 10.10.10.137
-
+    ansible_become_pass: telewiz6
   tasks:
-    - name: Sending HTTP POST to the endpoint with params
-      sns_command:
-        appliance: "{{ appliance }}"
-        script: |
-          curltool -r POST -u http://10.10.10.137:5555 -p post_param1=10.0.0.142
+  - name: HTTP request using EVA curltool
+    command: curltool -r POST -u http://10.10.10.137:5555 -p post_param1=10.0.0.142
