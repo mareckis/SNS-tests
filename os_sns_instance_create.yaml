@@ -10,7 +10,7 @@
        image: EVA_VPAYG_OpenStack
        key_name: vm
        timeout: 200
-       flavor: m2.small
+       flavor: m1.medium
        auto_ip: yes
        nics:
         - net-name: private
