@@ -11,8 +11,8 @@
   tasks:
     - name: Wait for EVA firewall to fully boot up
       pause:
-        minutes: 20
-        prompt: "Waiting 20 minutes to activate SSH"
+        minutes: 14
+        prompt: "Waiting 14 minutes to activate SSH"
     - name: Activate SSH service on remote firewall
       sns_command:
         appliance: "{{ appliance }}"
